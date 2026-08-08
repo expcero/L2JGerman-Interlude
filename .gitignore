@@ -1,0 +1,38 @@
+# Runtime identifiers and private configuration
+/game/config/hexid.txt
+/game/config/other/hexid.txt
+/game/data/xml/custom/adminaccesslevel/gm_list.xml
+
+# Logs and runtime data
+/game/cachedir/
+/game/log/
+/auth/log/
+*.log
+*.lck
+hs_err_pid*
+
+# Java generated files
+/bin/
+/build/
+/dist/
+*.class
+
+# Packaged/generated artifacts
+*.zip
+*.tar
+*.gz
+
+# IDE local files
+.vscode/
+.idea/
+*.iml
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
