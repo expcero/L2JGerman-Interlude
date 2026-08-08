@@ -1,328 +1,298 @@
-<div align="center">
+# ⚔️ L2J Interlude
 
-# ⚔️ NEXORA Project
+### Proyecto de desarrollo para Lineage II Interlude
 
-### Lineage II Interlude Development Project
-
-Servidor baseado em Java 11 e MariaDB com ferramentas auxiliares para cliente, launcher, atualizador e painel web.
-
-![Java](https://img.shields.io/badge/Java-11-orange)
-![MariaDB](https://img.shields.io/badge/MariaDB-10.4-blue)
-![Platform](https://img.shields.io/badge/Platform-Windows-success)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-
-</div>
+Servidor desarrollado con Java 11 y MariaDB, con herramientas auxiliares para el cliente, launcher, actualizador y panel web.
 
 ---
 
-# 📖 Sobre o Projeto
+## 📖 Acerca del proyecto
 
-O **NEXORA Project** é uma base de desenvolvimento para servidores **Lineage II Interlude**, desenvolvida com foco em:
+**L2J Interlude** es una base de desarrollo para servidores de **Lineage II Interlude**, creada con foco en:
 
-- 🚀 Performance
-- 🔒 Segurança
-- 🛠️ Facilidade de manutenção
-- 📦 Distribuição simplificada
-- 🌐 Integração com Website e Launcher
-- 🔄 Sistema de atualização automática
+- 🚀 Rendimiento
+- 🔒 Seguridad
+- 🛠️ Facilidad de mantenimiento
+- 📦 Distribución simplificada
+- 🌐 Integración con sitio web y launcher
+- 🔄 Sistema de actualización automática
 
 ---
 
-# ✨ Recursos
+## ✨ Características
 
-| Recurso | Status |
-|----------|----------|
+| Característica | Estado |
+| --- | --- |
 | Login Server | ✅ |
 | Game Server | ✅ |
-| Sistema de Atualização | ✅ |
-| Launcher Customizado | ✅ |
-| Proteção Cliente | ✅ |
+| Sistema de actualización | ✅ |
+| Launcher personalizado | ✅ |
+| Protección del cliente | ✅ |
 | InterfaceBlock | ✅ |
-| Painel Web | ✅ |
-| Banco MariaDB | ✅ |
+| Panel web | ✅ |
+| Base de datos MariaDB | ✅ |
 | Java 11 | ✅ |
 
 ---
 
-# 📥 Downloads Oficiais
+## 📥 Descargas
 
-## Arquivos do Projeto
-
-| Componente | Link |
-|------------|------------|
-| 🛡️ DStupe.dll (Proteção Cliente) | https://github.com/JulioPradoL2j/L2Protection |
-| 🎮 Cliente Interlude + Patch | https://www.mediafire.com/file/8bwfzaco9k7jqv4/Lineage_II_-_Chronicle_Interlude.zip/file |
-| 🖥️ InterfaceBlock | https://github.com/JulioPradoL2j/InterfaceBlock |
-| 🚀 Launcher | https://github.com/JulioPradoL2j/L2Updater |
-| 🌐 Website / Painel Web | https://github.com/JulioPradoL2j/L2UpdaterWeb |
-| 🔄 Atualizador Compilado | https://github.com/JulioPradoL2j/CompiledFiles |
+| Componente | Enlace |
+| --- | --- |
+| 🛡️ DStupe.dll (protección del cliente) | [L2Protection](https://github.com/JulioPradoL2j/L2Protection) |
+| 🎮 Cliente Interlude + Patch | [Descargar desde MediaFire](https://www.mediafire.com/file/8bwfzaco9k7jqv4/Lineage_II_-_Chronicle_Interlude.zip/file) |
+| 🖥️ InterfaceBlock | [InterfaceBlock](https://github.com/JulioPradoL2j/InterfaceBlock) |
+| 🚀 Launcher | [L2Updater](https://github.com/JulioPradoL2j/L2Updater) |
+| 🌐 Sitio web / Panel web | [L2UpdaterWeb](https://github.com/JulioPradoL2j/L2UpdaterWeb) |
+| 🔄 Actualizador compilado | [CompiledFiles](https://github.com/JulioPradoL2j/CompiledFiles) |
 
 ---
 
-## Dependências
+## 🧩 Dependencias
 
-| Software | Versão |
-|------------|------------|
+| Software | Versión |
+| --- | --- |
 | ☕ Java JDK | 11 |
-| 🛢️ MariaDB | 10.4+ |
-| 🖥️ Eclipse IDE | Última versão |
+| 🛢️ MariaDB | 10.4 o superior |
+| 🖥️ Eclipse IDE | Versión reciente |
+| 🔨 Apache Ant | Compatible con Java 11 |
 
-### Downloads
+### Enlaces de descarga
 
-Java 11
-
-https://mega.nz/file/V7tj1arS#OKWaTzaCqYK0m3iMmR0kW3TddfAJoiu8a20kOFEKShk
-
-MariaDB 10.4
-
-https://mega.nz/file/1jEykRgL#DDuIGktiFbmE-M0jMzhUvYVckw1U0ov-OnZEYS5vopU
+- [Java 11](https://mega.nz/file/V7tj1arS#OKWaTzaCqYK0m3iMmR0kW3TddfAJoiu8a20kOFEKShk)
+- [MariaDB 10.4](https://mega.nz/file/1jEykRgL#DDuIGktiFbmE-M0jMzhUvYVckw1U0ov-OnZEYS5vopU)
 
 ---
 
-# 🖥️ Requisitos do Sistema
+## 🖥️ Requisitos del sistema
 
-## Ambiente de Desenvolvimento
+### Entorno de desarrollo
 
-| Item | Recomendado |
-|---------|---------|
-| Windows | 10 ou 11 |
-| Processador | Intel i5 / Ryzen 5 |
-| RAM | 8 GB |
-| SSD | 20 GB livres |
+| Componente | Recomendado |
+| --- | --- |
+| Sistema operativo | Windows 10 u 11 |
+| Procesador | Intel i5 / Ryzen 5 |
+| Memoria RAM | 8 GB |
+| Almacenamiento | SSD con 20 GB libres |
 | Java | JDK 11 |
-| Banco | MariaDB 10.4 |
+| Base de datos | MariaDB 10.4 o superior |
 
-## Ambiente de Produção
+### Entorno de producción
 
-| Item | Recomendado |
-|---------|---------|
-| Windows Server | 2019 ou superior |
-| CPU | Xeon / Ryzen |
-| RAM | 16 GB |
-| SSD | Recomendado |
-| Rede | Conexão dedicada |
+| Componente | Recomendado |
+| --- | --- |
+| Sistema operativo | Windows Server 2019 o superior |
+| Procesador | Xeon / Ryzen |
+| Memoria RAM | 16 GB |
+| Almacenamiento | SSD |
+| Red | Conexión dedicada |
 
 ---
 
-# ⚙️ Instalação Rápida
+## ⚙️ Instalación rápida
 
-## 1. Instalar Java 11
+### 1. Instalar Java 11
 
-Após instalar o Java configure a variável de ambiente:
-
-### JAVA_HOME
+Después de instalar Java, configurá la variable de entorno `JAVA_HOME`:
 
 ```text
 C:\Program Files\Java\jdk-11
 ```
 
-Adicionar ao PATH:
+Agregá al `PATH`:
 
 ```text
 %JAVA_HOME%\bin
 ```
 
-Verificar instalação:
+Verificá la instalación:
 
 ```cmd
 java -version
 ```
 
-Resultado esperado:
+El resultado debe indicar una versión de Java 11.
 
-```text
-openjdk version "11"
-```
+### 2. Instalar MariaDB
 
----
+Instalá MariaDB 10.4 o superior y comprobá que el servicio esté iniciado.
 
-## 2. Instalar MariaDB
+### 3. Configurar y crear la base de datos
 
-Instale o MariaDB e configure:
-
-```text
-Usuário: root
-Senha: root
-```
-
-Confirme que o serviço está iniciado.
-
----
-
-## 3. Configurar e Criar o Banco de Dados
-
-Configure a conexão em:
+Configurá la conexión en:
 
 ```text
 tools\mariadb.xml
-
-## 4. Importar Projeto no Eclipse
-
-Abra:
-
-```text
-File
- └── Import
-      └── Existing Projects into Workspace
 ```
 
-Selecione a pasta raiz do projeto.
+De forma predeterminada, el proyecto utiliza:
+
+```text
+Base de datos: l2jdb
+Usuario: root
+Contraseña: root
+Host: 127.0.0.1
+Puerto: 3306
+```
+
+> ⚠️ En producción, cambiá la contraseña predeterminada y restringí el acceso a la base de datos.
+
+Para abrir el panel de administración de la base de datos, ejecutá:
+
+```text
+tools\DatabasePanel.vbs
+```
+
+También podés iniciarlo desde Eclipse utilizando:
+
+```text
+laucher\Database.launch
+```
+
+### 4. Importar el proyecto en Eclipse
+
+En Eclipse, seleccioná:
+
+```text
+File → Import → Existing Projects into Workspace
+```
+
+Elegí la carpeta raíz del proyecto y completá la importación.
+
+### 5. Iniciar el servidor
+
+Dentro de la carpeta `laucher\`, ejecutá primero:
+
+```text
+Loginserver.launch
+```
+
+Después, ejecutá:
+
+```text
+Gameserver.launch
+```
+
+Los archivos `.launch` también se pueden ejecutar desde Eclipse mediante `Run As → Java Application`.
 
 ---
 
-## 5. Iniciar o Servidor
+## 🔨 Compilación
 
-Dentro da pasta:
+Para recompilar la biblioteca principal:
 
-```text
-launcher\
+```cmd
+ant -f build.xml
 ```
 
-Execute:
+Archivo generado:
 
 ```text
-LoginServer.launch
+libs\La2Interlude.jar
 ```
 
-Depois:
+Para crear el paquete completo de distribución:
 
-```text
-GameServer.launch
+```cmd
+ant -f Mount.xml
 ```
 
-Ou:
+Archivo generado:
 
 ```text
-Run As → Java Application
-```
-
----
-
-# 🔨 Compilação
-
-Para gerar os binários:
-
-```text
-build.xml
-```
-
-Para gerar o pacote final:
-
-```text
-amount.xml
-```
-
-Estrutura gerada:
-
-```text
-Zip/
-├── LoginServer
-├── GameServer
-├── libs
-├── tools
-├── images
-└── configs
+Zip\trunk.zip
 ```
 
 ---
 
-# 🌐 Portas Utilizadas
+## 🌐 Puertos utilizados
 
-| Serviço | Porta |
-|----------|----------|
+| Servicio | Puerto |
+| --- | ---: |
 | Login Server | 2106 |
 | Game Server | 7777 |
 | MariaDB | 3306 |
 
-Caso utilize VPS ou dedicado, libere essas portas no Firewall.
+Si utilizás una VPS o un servidor dedicado, habilitá únicamente los puertos necesarios en el firewall. No expongas públicamente el puerto de MariaDB sin una configuración de seguridad adecuada.
 
 ---
 
-# ❗ Problemas Comuns
+## ❗ Problemas frecuentes
 
-### Java não encontrado
+### Java no encontrado
 
-Verifique:
+Ejecutá:
 
 ```cmd
 java -version
 ```
 
-e confirme a configuração do:
+Comprobá también que `JAVA_HOME` y `PATH` estén configurados correctamente.
+
+### `Access denied for user 'root'`
+
+Revisá el usuario y la contraseña definidos en:
 
 ```text
-JAVA_HOME
+tools\mariadb.xml
 ```
 
----
+### No se crearon las tablas
 
-### Access denied for user 'root'
-
-Verifique usuário e senha do banco configurados corretamente.
-
----
-
-### Nenhuma tabela criada
-
-Confirme a existência dos arquivos SQL em:
+Confirmá que existan los archivos SQL en:
 
 ```text
 tools\sql\
 ```
 
----
+Luego, volvé a abrir el panel mediante `tools\DatabasePanel.vbs` o `laucher\Database.launch`.
 
-### Servidor não conecta ao banco
+### El servidor no se conecta a la base de datos
 
-Verifique:
+Verificá:
 
-- MariaDB iniciado
-- Porta 3306 aberta
-- Usuário configurado corretamente
-- Configurações do database.properties
-
----
-
-# 📚 Repositórios Relacionados
-
-| Projeto | Link |
-|----------|----------|
-| L2Protection | https://github.com/JulioPradoL2j/L2Protection |
-| InterfaceBlock | https://github.com/JulioPradoL2j/InterfaceBlock |
-| L2Updater | https://github.com/JulioPradoL2j/L2Updater |
-| L2UpdaterWeb | https://github.com/JulioPradoL2j/L2UpdaterWeb |
-| CompiledFiles | https://github.com/JulioPradoL2j/CompiledFiles |
+- Que el servicio de MariaDB esté iniciado.
+- Que el puerto `3306` sea correcto.
+- Que exista la base de datos `l2jdb`.
+- Que el usuario y la contraseña sean correctos.
+- Que `tools\mariadb.xml` esté configurado correctamente.
 
 ---
 
-# 📞 Suporte
+## 📚 Repositorios relacionados
 
-Ao reportar um problema informe:
-
-- Sistema Operacional
-- Versão do Java
-- Mensagem de erro completa
-- Log do LoginServer
-- Log do GameServer
-
-📧 E-mail:
-
-juliopradol2j@gmail.com
+| Proyecto | Enlace |
+| --- | --- |
+| L2Protection | [GitHub](https://github.com/JulioPradoL2j/L2Protection) |
+| InterfaceBlock | [GitHub](https://github.com/JulioPradoL2j/InterfaceBlock) |
+| L2Updater | [GitHub](https://github.com/JulioPradoL2j/L2Updater) |
+| L2UpdaterWeb | [GitHub](https://github.com/JulioPradoL2j/L2UpdaterWeb) |
+| CompiledFiles | [GitHub](https://github.com/JulioPradoL2j/CompiledFiles) |
 
 ---
 
-# 📜 Licença
+## 📞 Soporte
 
-Este projeto é disponibilizado para fins de estudo, desenvolvimento e manutenção de servidores Lineage II.
+Al reportar un problema, incluí:
 
-Verifique os termos definidos pelos autores antes da redistribuição.
+- Sistema operativo.
+- Versión de Java.
+- Mensaje de error completo.
+- Log del Login Server.
+- Log del Game Server.
+
+Contacto: [juliopradol2j@gmail.com](mailto:juliopradol2j@gmail.com)
 
 ---
 
-<div align="center">
+## 📜 Licencia
 
-### © NEXORA Project
+Este proyecto se distribuye bajo los términos de la licencia **GNU General Public License v3.0**. Consultá el archivo [LICENSE](LICENSE) para conocer los términos completos.
 
-Desenvolvido para a comunidade Lineage II
+Los recursos relacionados con Lineage II pertenecen a sus respectivos propietarios. Asegurate de contar con autorización para utilizar y distribuir los archivos asociados al juego.
 
-</div>
+---
+
+### © L2J Interlude
+
+Desarrollado para la comunidad de Lineage II.
