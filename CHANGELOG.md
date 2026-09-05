@@ -4,6 +4,12 @@ Este archivo conserva el contexto del proyecto entre equipos. Actualizarlo en ca
 
 Para nuevas entradas, usar fecha, cambio o análisis, archivos relevantes, verificaciones y pendientes. No registrar contraseñas, identificadores privados ni datos de cuentas. Mantener las entradas más recientes primero.
 
+## 2026-09-04 — Flujo de ramas
+
+- Acordar `develop` como rama para los commits de trabajo y conservar `main` como rama principal. No integrar en `main` sin una indicación explícita.
+- Los pushes quedan a cargo del usuario.
+- Verificación: `develop` está activa y parte de `438d1244`, incluyendo el plan de mejoras; árbol de trabajo limpio antes de esta actualización documental.
+
 ## 2026-09-04 — Plan de mejoras separado
 
 - Crear `PLAN_DE_MEJORAS.md` con los diez pasos de la auditoría de la notebook, conservando el orden original e incorporando las precisiones del contraste local.
@@ -64,4 +70,4 @@ Base del análisis: commit `39b518d3` y cambios locales del registro de Game Ser
 
 ### Continuidad entre equipos
 
-Los commits deben estar subidos al remoto para recuperarlos desde otra máquina. Antes de continuar, actualizar la rama con `git pull --ff-only` y leer este archivo. Si hay cambios locales o divergencias, revisarlos antes de integrar. Las configuraciones e identificadores ignorados son propios de cada instalación y no viajan por Git.
+Los commits deben estar subidos al remoto para recuperarlos desde otra máquina; el usuario realiza los pushes. Trabajar y commitear en `develop`, conservando `main` como rama principal. Antes de continuar, actualizar `develop` con `git pull --ff-only` cuando tenga un remoto configurado y leer este archivo. Si hay cambios locales o divergencias, revisarlos antes de integrar. Las configuraciones e identificadores ignorados son propios de cada instalación y no viajan por Git.
