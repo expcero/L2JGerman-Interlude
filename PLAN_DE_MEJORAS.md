@@ -80,12 +80,14 @@ El historial de análisis, cambios y verificaciones se mantiene en [CHANGELOG.md
 
 ## Cómo continuar entre equipos
 
-1. Actualizar la rama desde el remoto y revisar los cambios locales antes de integrar.
+Los avances se commitean en `develop`. `main` se conserva como rama principal; no integrar cambios allí sin una indicación explícita. Los pushes los realiza el usuario.
+
+1. Trabajar en `develop`, actualizarla desde el remoto cuando esté publicada y revisar los cambios locales antes de integrar.
 2. Leer este plan y las últimas entradas del changelog.
 3. Elegir un paso pendiente y revisar el código actual antes de modificarlo.
 4. Implementar y ejecutar verificaciones acordes al cambio.
 5. Marcar solamente las tareas realmente completadas y actualizar el changelog con resultados y limitaciones.
-6. Commitear y subir el avance junto con su documentación.
+6. Commitear el avance junto con su documentación en `develop`. El usuario se encarga de subirlo al remoto.
 
 ## Estado inicial
 
