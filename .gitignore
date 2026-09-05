@@ -1,6 +1,7 @@
 # Runtime identifiers and private configuration
 /game/config/hexid.txt
 /game/config/other/hexid.txt
+/game/config/other/hexid-backup.txt
 /game/data/xml/custom/adminaccesslevel/gm_list.xml
 
 # Logs and runtime data

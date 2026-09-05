@@ -4,6 +4,8 @@
 
 Servidor desarrollado con Java 11 y MariaDB, con herramientas auxiliares para el cliente, launcher, actualizador y panel web.
 
+El [registro de análisis y cambios](CHANGELOG.md) documenta las correcciones, verificaciones y pendientes para continuar el trabajo entre equipos.
+
 ---
 
 ## 📖 Acerca del proyecto

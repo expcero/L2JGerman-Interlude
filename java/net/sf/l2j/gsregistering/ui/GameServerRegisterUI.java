@@ -95,7 +95,12 @@ public final class GameServerRegisterUI extends JFrame
 	public static void main(String[] args)
 	{
 		Config.loadGameServerRegistration();
-		
+		ConnectionPool.init();
+
+		if (!ConnectionPool.isInitialized())
+		{
+			throw new IllegalStateException("No se pudo inicializar la conexión con MariaDB.");
+		}
 		SwingUtilities.invokeLater(() -> {
 			try
 			{
