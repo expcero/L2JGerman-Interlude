@@ -4,6 +4,13 @@ Este archivo conserva el contexto del proyecto entre equipos. Actualizarlo en ca
 
 Para nuevas entradas, usar fecha, cambio o análisis, archivos relevantes, verificaciones y pendientes. No registrar contraseñas, identificadores privados ni datos de cuentas. Mantener las entradas más recientes primero.
 
+## 2026-09-04 — Plan de mejoras separado
+
+- Crear `PLAN_DE_MEJORAS.md` con los diez pasos de la auditoría de la notebook, conservando el orden original e incorporando las precisiones del contraste local.
+- Añadir casillas de seguimiento, criterios de verificación y un procedimiento para continuar entre equipos.
+- Enlazar el plan desde `README.md`. Todos los pasos comienzan pendientes; esta actualización no modifica código ni corrige los hallazgos.
+- Verificación: revisión del orden contra el chat original y comprobación de formato con `git diff --check`.
+
 ## 2026-09-04 — Registro de Game Server y contraste de auditoría
 
 ### Cambios realizados

@@ -6,6 +6,8 @@ Servidor desarrollado con Java 11 y MariaDB, con herramientas auxiliares para el
 
 El [registro de análisis y cambios](CHANGELOG.md) documenta las correcciones, verificaciones y pendientes para continuar el trabajo entre equipos.
 
+El [plan de mejoras](PLAN_DE_MEJORAS.md) conserva el paso a paso de la auditoría y permite marcar las tareas completadas.
+
 ---
 
 ## 📖 Acerca del proyecto
