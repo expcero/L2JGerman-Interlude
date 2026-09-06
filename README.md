@@ -165,19 +165,9 @@ Elegí la carpeta raíz del proyecto y completá la importación.
 
 ### 5. Iniciar el servidor
 
-Dentro de la carpeta `laucher\`, ejecutá primero:
+La guía de [arranque local del servidor](docs/ARRANQUE_LOCAL.md) reúne la configuración previa, los comandos para CMD y PowerShell, la comprobación de conexión y la detención ordenada de los servicios.
 
-```text
-Loginserver.launch
-```
-
-Después, ejecutá:
-
-```text
-Gameserver.launch
-```
-
-Los archivos `.launch` también se pueden ejecutar desde Eclipse mediante `Run As → Java Application`.
+Para ejecutarlo desde Eclipse, iniciá primero `laucher\Loginserver.launch` y después `laucher\Gameserver.launch` mediante `Run As → Java Application`.
 
 ---
 
