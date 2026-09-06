@@ -4,6 +4,23 @@ Este archivo conserva el contexto del proyecto entre equipos. Actualizarlo en ca
 
 Para nuevas entradas, usar fecha, cambio o análisis, archivos relevantes, verificaciones y pendientes. No registrar contraseñas, identificadores privados ni datos de cuentas. Mantener las entradas más recientes primero.
 
+## 2026-09-06 — Paso 1 (parcial): penalización de clan en `AdminEditChar`
+
+### Cambios realizados
+
+- `java/net/sf/l2j/gameserver/handler/admincommandhandlers/AdminEditChar.java`: corregir el `UPDATE` para personajes desconectados en `admin_remove_clan_penalty`, asignando explícitamente `0` a `clan_create_expiry_time` o `clan_join_expiry_time`.
+- `java/net/sf/l2j/gameserver/handler/admincommandhandlers/AdminEditChar.java`: usar `executeUpdate()` y devolver mensaje de error cuando no existe el personaje en DB.
+- `java/net/sf/l2j/gameserver/handler/admincommandhandlers/AdminEditChar.java`: registrar en log la excepción completa al fallar la operación, incluyendo stack trace.
+
+### Verificaciones
+
+- Diagnóstico del archivo modificado: sin errores (`get_errors`).
+- Intento de compilación con Ant: `ant -f build.xml compile` falla por falta del directorio `${build.classes}`. Este fallo pertenece al estado actual del build y está alineado con los pendientes del Paso 7.
+
+### Pendientes
+
+- Verificar en ejecución los dos flujos de `admin_remove_clan_penalty`: personaje desconectado (persistencia en DB) y personaje conectado (actualización en memoria).
+
 ## 2026-09-04 — Flujo de ramas
 
 - Acordar `develop` como rama para los commits de trabajo y conservar `main` como rama principal. No integrar en `main` sin una indicación explícita.

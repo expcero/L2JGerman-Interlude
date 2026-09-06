@@ -8,9 +8,9 @@ El historial de análisis, cambios y verificaciones se mantiene en [CHANGELOG.md
 
 ### 1. Corregir el SQL de penalización de clan
 
-- [ ] Corregir el UPDATE de `AdminEditChar.java` para asignar cero a `clan_create_expiry_time` o `clan_join_expiry_time`.
+- [x] Corregir el UPDATE de `AdminEditChar.java` para asignar cero a `clan_create_expiry_time` o `clan_join_expiry_time`.
 - [ ] Comprobar ambas operaciones con personajes desconectados y preservar el comportamiento para conectados.
-- [ ] Registrar la causa completa si falla la operación SQL.
+- [x] Registrar la causa completa si falla la operación SQL.
 
 ### 2. Cerrar el bypass de rutas HTML
 

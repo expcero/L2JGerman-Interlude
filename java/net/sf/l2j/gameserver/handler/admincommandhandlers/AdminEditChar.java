@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import net.sf.l2j.commons.lang.StringUtil;
@@ -528,11 +529,16 @@ public class AdminEditChar implements IAdminCommandHandler
 				{
 					try (Connection con = ConnectionPool.getConnection())
 					{
-						PreparedStatement ps = con.prepareStatement("UPDATE characters SET " + (changeCreateExpiryTime ? "clan_create_expiry_time" : "clan_join_expiry_time") + " WHERE char_name=? LIMIT 1");
-						
-						ps.setString(1, playerName);
-						ps.execute();
-						ps.close();
+						final String fieldName = changeCreateExpiryTime ? "clan_create_expiry_time" : "clan_join_expiry_time";
+						try (PreparedStatement ps = con.prepareStatement("UPDATE characters SET " + fieldName + "=0 WHERE char_name=? LIMIT 1"))
+						{
+							ps.setString(1, playerName);
+							if (ps.executeUpdate() == 0)
+							{
+								activeChar.sendMessage("No player found with name " + playerName + ".");
+								return false;
+							}
+						}
 					}
 				}
 				else
@@ -547,6 +553,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
+				_log.log(Level.WARNING, "Couldn't remove clan penalty for player " + command + ".", e);
 				activeChar.sendMessage("Couldn't remove clan penalty.");
 			}
 		}
