@@ -4,7 +4,7 @@ Este archivo conserva el contexto del proyecto entre equipos. Actualizarlo en ca
 
 Para nuevas entradas, usar fecha, cambio o análisis, archivos relevantes, verificaciones y pendientes. No registrar contraseñas, identificadores privados ni datos de cuentas. Mantener las entradas más recientes primero.
 
-## 2026-09-06 — Paso 1 (parcial): penalización de clan en `AdminEditChar`
+## 2026-09-06 — Paso 1 (parcial): penalización de clan en `AdminEditChar` ([PR #2](https://github.com/expcero/L2JGerman-Interlude/pull/2))
 
 ### Cambios realizados
 
