@@ -1,5 +1,10 @@
 # Patch de cliente requerido para pruebas locales
 
+El seguimiento de los candidatos y clones locales está en el
+[registro temporal de repositorios relacionados](REPOSITORIOS_RELACIONADOS.md).
+Consultar allí los hallazgos posteriores, incluida la aclaración sobre el nombre
+`dsetup.dll`, antes de elegir un patch.
+
 El servidor local inicia correctamente, pero rechaza el cliente actual con este motivo:
 
 ```text
