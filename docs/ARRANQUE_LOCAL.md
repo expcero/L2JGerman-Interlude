@@ -4,6 +4,21 @@ Esta guía describe cómo iniciar localmente el Login Server y el Game Server de
 
 Los ejemplos usan `C:\proyect\L2JGerman-Interlude`. Reemplazá esa ruta si el repositorio está en otra carpeta. Completá la preparación antes de abrir las dos terminales de los servidores.
 
+## Seguí estos pasos en orden
+
+No inicies el cliente ni los servidores hasta completar los pasos 1 a 4.
+
+1. **Instalá Java 11 y MariaDB.** Confirmá que `JAVA_HOME` apunta al JDK 11 y que MariaDB está iniciado.
+2. **Creá la base de datos.** Abrí `tools\DatabasePanel.vbs`, configurá la conexión y cargá el esquema SQL en MariaDB.
+3. **Revisá la conexión.** Los tres archivos `tools\mariadb.xml`, `auth\config\main\loginserver.properties` y `game\config\main\server.properties` deben indicar la misma base, usuario, contraseña, host y puerto.
+4. **Registrá el Game Server una sola vez.** Ejecutá `auth\startLoginRegister.vbs`, elegí un ID y confirmá que se creó `game\config\other\hexid.txt`.
+5. **Actualizá el JAR.** Ejecutá el bloque de compilación de esta guía para que `libs\La2Interlude.jar` incluya el código actual.
+6. **Iniciá Login Server.** Abrí una terminal y ejecutá el comando de Login Server. Dejala abierta.
+7. **Iniciá Game Server.** Abrí otra terminal y ejecutá el comando de Game Server. Dejala abierta.
+8. **Configurá el cliente y conectate.** En el `l2.ini` del cliente configurá `127.0.0.1` y puerto `2106`; después abrí el cliente Interlude.
+
+Si un paso falla, no continúes con el siguiente: revisá la sección correspondiente más abajo.
+
 ## Requisitos
 
 - Java JDK 11 instalado y disponible mediante `JAVA_HOME`.

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -122,6 +123,8 @@ import net.sf.l2j.timezone.TimeFarmZoneManager;
 
 public final class RequestBypassToServer extends L2GameClientPacket
 {
+	private static final Set<String> DUNGEON_HTML_PAGES = Set.of("index", "history");
+
 	private String _command;
 	private static final long COOLDOWN_MS = 10000L;
 	
@@ -217,45 +220,51 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					}
 					case "chat":
 					{
-					    final String htmlnavi = tokenizer.getToken(2); // index | history | ...
-					    int pageOrId = 1;
+						final String htmlnavi = tokenizer.getToken(2); // index | history
+						if (htmlnavi == null || !DUNGEON_HTML_PAGES.contains(htmlnavi.toLowerCase()))
+						{
+							activeChar.sendMessage("Invalid dungeon page.");
+							break;
+						}
 
-					    final String t3 = tokenizer.getToken(3);
-					    if (t3 != null && t3.matches("\\d+"))
-					        pageOrId = Integer.parseInt(t3);
+						int pageOrId = 1;
 
-					    final NpcHtmlMessage html = new NpcHtmlMessage(0);
-					    html.setFile("data/html/mods/dungeon/" + htmlnavi + ".htm");
-					    html.replace("%BACK%", "bypass dungeon chat index 1");
+						final String t3 = tokenizer.getToken(3);
+						if (t3 != null && t3.matches("\\d+"))
+							pageOrId = Integer.parseInt(t3);
 
-					    if ("index".equalsIgnoreCase(htmlnavi))
-					    {
-					        final int PAGE_SIZE = 5;
-					        final int page = DungeonData.getInstance().clampPage(pageOrId, PAGE_SIZE);
+						final NpcHtmlMessage html = new NpcHtmlMessage(0);
+						html.setFile("data/html/mods/dungeon/" + htmlnavi + ".htm");
+						html.replace("%BACK%", "bypass dungeon chat index 1");
 
-					        html.replace("%DUNGEON_LIST%", DungeonData.getInstance().buildDungeonListHtml(page, PAGE_SIZE));
-					        html.replace("%DUNGEON_PAGES%", DungeonData.getInstance().buildDungeonPagesHtml(page, PAGE_SIZE));
-					        html.replace("%PAGE%", String.valueOf(page));
-					    }
-					    else if ("history".equalsIgnoreCase(htmlnavi))
-					    {
-					        final int dungeonId = pageOrId;
-					        final DungeonTemplate d = DungeonData.getInstance().getDungeon(dungeonId);
+						if ("index".equalsIgnoreCase(htmlnavi))
+						{
+							final int PAGE_SIZE = 5;
+							final int page = DungeonData.getInstance().clampPage(pageOrId, PAGE_SIZE);
 
-					        if (d == null)
-					        {
-					            html.replace("%DUNGEON_NAME%", "Unknown");
-					            html.replace("%DUNGEON_STORY%", "<font color=\"LEVEL\">Dungeon not found.</font>");
-					        }
-					        else
-					        {
-					            html.replace("%DUNGEON_NAME%", DungeonData.getInstance().safeHtml(d._name));
-					            html.replace("%DUNGEON_STORY%", DungeonData.getInstance().safeHtml(d._story != null ? d._story : "No story yet."));
-					        }
-					    }
+							html.replace("%DUNGEON_LIST%", DungeonData.getInstance().buildDungeonListHtml(page, PAGE_SIZE));
+							html.replace("%DUNGEON_PAGES%", DungeonData.getInstance().buildDungeonPagesHtml(page, PAGE_SIZE));
+							html.replace("%PAGE%", String.valueOf(page));
+						}
+						else if ("history".equalsIgnoreCase(htmlnavi))
+						{
+							final int dungeonId = pageOrId;
+							final DungeonTemplate d = DungeonData.getInstance().getDungeon(dungeonId);
 
-					    activeChar.sendPacket(html);
-					    break;
+							if (d == null)
+							{
+								html.replace("%DUNGEON_NAME%", "Unknown");
+								html.replace("%DUNGEON_STORY%", "<font color=\"LEVEL\">Dungeon not found.</font>");
+							}
+							else
+							{
+								html.replace("%DUNGEON_NAME%", DungeonData.getInstance().safeHtml(d._name));
+								html.replace("%DUNGEON_STORY%", DungeonData.getInstance().safeHtml(d._story != null ? d._story : "No story yet."));
+							}
+						}
+
+						activeChar.sendPacket(html);
+						break;
 					}
 
 
@@ -275,6 +284,12 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					case "chat":
 					{
 						String htmlnavi = tokenizer.getToken(2);
+						if (!isValidMerchantPage(htmlnavi))
+						{
+							activeChar.sendMessage("Invalid merchant page.");
+							break;
+						}
+
 						NpcHtmlMessage html = new NpcHtmlMessage(0);
 						html.setFile("data/html/merchant/" + htmlnavi + ".htm");
 						html.replace("%BACK%", "bypass merchant chat 55500");
@@ -1773,7 +1788,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 	
 	private static void playerBook(Player activeChar, String path)
 	{
-		if (path.indexOf("..") != -1)
+		if (!isValidRelativeHtmlPath(path))
 			return;
 		
 		final StringTokenizer st = new StringTokenizer(path);
@@ -1957,7 +1972,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 	
 	private static void playerHelp(Player activeChar, String path)
 	{
-		if (path.indexOf("..") != -1)
+		if (!isValidRelativeHtmlPath(path))
 			return;
 		
 		final StringTokenizer st = new StringTokenizer(path);
@@ -1969,6 +1984,19 @@ public final class RequestBypassToServer extends L2GameClientPacket
 			html.setItemId(Integer.parseInt(cmd[1]));
 		html.disableValidation();
 		activeChar.sendPacket(html);
+	}
+
+	private static boolean isValidMerchantPage(String page)
+	{
+		return page != null && page.matches("\\d+(?:-[A-Za-z0-9]+)*");
+	}
+
+	private static boolean isValidRelativeHtmlPath(String path)
+	{
+		final int itemSeparator = path.indexOf('#');
+		final String fileName = itemSeparator == -1 ? path : path.substring(0, itemSeparator);
+		final String itemId = itemSeparator == -1 ? null : path.substring(itemSeparator + 1);
+		return fileName.matches("[A-Za-z0-9_-]+(?:/[A-Za-z0-9_-]+)*\\.htm") && (itemId == null || itemId.matches("\\d+"));
 	}
 	
 	private static void TeleportTimeFarmZone(Player player)

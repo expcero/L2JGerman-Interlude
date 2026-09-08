@@ -14,9 +14,9 @@ El historial de análisis, cambios y verificaciones se mantiene en [CHANGELOG.md
 
 ### 2. Cerrar el bypass de rutas HTML
 
-- [ ] Restringir los destinos HTML de dungeon a una lista de páginas permitidas.
-- [ ] Aplicar una restricción equivalente al bypass de merchant, identificado durante el contraste local.
-- [ ] Revisar las rutas de `playerHelp()` y `playerBook()`.
+- [x] Restringir los destinos HTML de dungeon a una lista de páginas permitidas.
+- [x] Aplicar una restricción equivalente al bypass de merchant, identificado durante el contraste local.
+- [x] Revisar las rutas de `playerHelp()` y `playerBook()`.
 - [ ] Verificar que las páginas válidas funcionen y que no se puedan cargar páginas fuera del directorio autorizado.
 
 ### 3. Retirar las credenciales del paquete de producción

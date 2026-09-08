@@ -4,6 +4,23 @@ Este archivo conserva el contexto del proyecto entre equipos. Actualizarlo en ca
 
 Para nuevas entradas, usar fecha, cambio o análisis, archivos relevantes, verificaciones y pendientes. No registrar contraseñas, identificadores privados ni datos de cuentas. Mantener las entradas más recientes primero.
 
+## 2026-09-07 — Paso 2 (parcial): restricciones de rutas HTML
+
+### Cambios realizados
+
+- `java/net/sf/l2j/gameserver/network/clientpackets/RequestBypassToServer.java`: limitar `dungeon chat` a las páginas `index` e `history`.
+- `java/net/sf/l2j/gameserver/network/clientpackets/RequestBypassToServer.java`: permitir en `merchant chat` únicamente identificadores numéricos con sufijos alfanuméricos, sin rutas ni extensiones proporcionadas por el cliente.
+- `java/net/sf/l2j/gameserver/network/clientpackets/RequestBypassToServer.java`: limitar `playerHelp()` y `playerBook()` a rutas HTML relativas dentro de sus directorios y, opcionalmente, un identificador de item numérico.
+
+### Verificaciones
+
+- Diagnóstico del archivo modificado: sin errores (`get_errors`).
+- Compilación completa de 2.172 fuentes con JDK 11, `--release 11`, UTF-8, depuración habilitada y `libs/mariadb-java-client-3.1.4.jar`: correcta, código de salida 0. La salida se generó fuera del repositorio.
+
+### Pendientes
+
+- Probar desde un cliente o una prueba de paquetes las páginas válidas y el rechazo de rutas fuera de `mods/dungeon`, `merchant`, `help` y `mods/BookTeleport`.
+
 ## 2026-09-06 — Correcciones de la guía de arranque local
 
 - `docs/ARRANQUE_LOCAL.md`: entrecomillar el argumento de zona horaria en PowerShell. Se reprodujo el fallo sin comillas y se comprobó la ejecución de Java con el argumento corregido.
