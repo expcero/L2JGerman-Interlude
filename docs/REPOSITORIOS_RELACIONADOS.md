@@ -24,6 +24,46 @@ registrar aquí el motivo y comprobar si contiene cambios que deban conservarse.
 | [L2FileEdit](https://github.com/expcero/L2FileEdit) | `C:\proyect\L2FileEdit` | Herramientas para editar archivos `dat`, `ini` e `int` del cliente. | Disponible; compatibilidad con nuestros archivos pendiente de probar. |
 | [compileFilles](https://github.com/expcero/compileFilles) | `C:\proyect\compileFilles` | Scripts para preparar archivos de distribución y actualizaciones. | Utilidad potencial posterior; no contiene un cliente completo en las carpetas revisadas. |
 
+## Titularidad y origen verificados (2026-09-09)
+
+Los seis repositorios locales revisados tienen `origin` bajo la cuenta GitHub
+`expcero`; la API pública confirma ese propietario. No se verificó el correo
+privado asociado a la cuenta. La identidad usada por Git para autenticarse es
+independiente del propietario del repositorio.
+
+| Repositorio en expcero | Relación de fork actual en GitHub | Rama principal remota |
+| --- | --- | --- |
+| L2JGerman-Interlude | Independiente; esto no establece la autoría histórica del código. | develop |
+| L2Protection | Fork de JulioPradoL2j/L2Protection | main |
+| L2AntiCheat | Fork de L2JPremium-stack/L2AntiCheat | main |
+| L2FileEdit | Fork de L2jBrasil/L2FileEdit | master |
+| compileFilles | Fork de L2JPremium-stack/compileFilles | main |
+| L2crypt | Independiente; origen histórico acmi/L2crypt. | main |
+
+## Nuevas copias en GitHub (2026-09-09)
+
+Verificados los forks [expcero/Dependencies](https://github.com/expcero/Dependencies),
+[expcero/L2ClientDat](https://github.com/expcero/L2ClientDat) y
+[expcero/L2unreal](https://github.com/expcero/L2unreal). Sus originales son,
+respectivamente, lucasg/Dependencies, MobiusDevelopment/L2ClientDat y acmi/L2unreal.
+Los tres tienen master como rama principal. No se encontraron aún sus clones
+en C:\proyect. L2ClientDat incluye una definición específica para Interlude.
+
+La evaluación de Mobius en GitLab, su inventario de 37 crónicas y la comparación
+con nuestro servidor están en [ANALISIS_MOBIUS.md](ANALISIS_MOBIUS.md).
+
+## Herramientas adicionales (copias remotas verificadas; integración pendiente)
+
+| Repositorio original | Utilidad posible | Prioridad y límites |
+| --- | --- | --- |
+| [lucasg/Dependencies](https://github.com/lucasg/Dependencies) | Inspeccionar importaciones y dependencias de ejecutables y DLL de Windows. | Primera opción para investigar dependencias de dsetup.dll; no detecta cargas dinámicas mediante LoadLibrary ni demuestra por sí sola que el HWID funcione. |
+| [MobiusDevelopment/L2ClientDat](https://github.com/MobiusDevelopment/L2ClientDat) | Abrir y guardar archivos .dat del cliente. | Evaluar cuando necesitemos editar datos; confirmar soporte para nuestros archivos Interlude. |
+| [acmi/L2unreal](https://github.com/acmi/L2unreal) | Leer y modificar objetos UnrealScript de Lineage II. | Posterior, si necesitamos trabajar con paquetes del cliente; no resuelve la conexión HWID. |
+
+Se revisaron las descripciones de los proyectos originales y los forks del
+usuario. No se clonaron ni probaron estas tres herramientas durante esta revisión.
+No son dependencias nuevas del servidor.
+
 ## Hallazgos iniciales
 
 ### Herramienta adicional: L2crypt (revisión del 2026-09-09)
@@ -32,8 +72,8 @@ registrar aquí el motivo y comprobar si contiene cambios que deban conservarse.
   [expcero/L2crypt](https://github.com/expcero/L2crypt) se creó como fork del
   original [acmi/L2crypt](https://github.com/acmi/L2crypt). Conservar esta
   atribución aunque GitHub deje de mostrar la relación de fork.
-- El 2026-09-09 el usuario informó que cree haber completado la desvinculación
-  de la red de forks en GitHub; ese estado remoto queda pendiente de verificar.
+- El 2026-09-09 se confirmó mediante la API de GitHub la desvinculación:
+  `fork=false`, sin repositorio padre y con `main` como rama principal.
   La separación no cambia la procedencia del código ni su licencia MIT.
 - Repositorio consultado: [JekaKlever/L2crypt](https://github.com/JekaKlever/L2crypt),
   fork de [acmi/L2crypt](https://github.com/acmi/L2crypt). Se revisó como referencia;
@@ -94,6 +134,8 @@ registrar aquí el motivo y comprobar si contiene cambios que deban conservarse.
 
 | Fecha | Acción | Resultado |
 | --- | --- | --- |
+| 2026-09-09 | Verificación de tres nuevos forks y evaluación de Mobius en GitLab. | Confirmados Dependencies, L2ClientDat y L2unreal bajo expcero. Inventariadas las 37 crónicas de Mobius; CT_0_Interlude priorizado como referencia. Informe en ANALISIS_MOBIUS.md. |
+| 2026-09-09 | Auditoría de remotos y titularidad de los seis repositorios. | Todos bajo expcero. Confirmados L2crypt independiente y main predeterminada; esto no verifica la publicación del commit local f95d9ba. Registrados orígenes de los otros forks y tres herramientas candidatas adicionales. |
 | 2026-09-09 | Registro de procedencia tras la desvinculación indicada por el usuario. | Origen de expcero/L2crypt: acmi/L2crypt. JekaKlever/L2crypt fue una referencia consultada. Desvinculación remota pendiente de verificar; atribución y licencia conservadas. |
 | 2026-09-09 | Creación de la rama local main en L2crypt. | Commit `f95d9ba`: auxiliares DecryptL2.java y EncryptL2.java agregados, .class ignorados. Push rechazado (403): Git autenticado como germankay sin permiso de escritura en expcero/L2crypt. Pendientes publicar main y establecerla como rama predeterminada en GitHub; master conservada. |
 | 2026-09-09 | Vinculación de L2crypt con el fork del usuario. | `origin`: expcero/L2crypt; `upstream`: acmi/L2crypt. Fetch verificado usando certificados de Windows (`http.sslBackend=schannel` solo para esa llamada); master sin diferencias con origin/master. Auxiliares locales sin seguimiento conservados; sin push. |
