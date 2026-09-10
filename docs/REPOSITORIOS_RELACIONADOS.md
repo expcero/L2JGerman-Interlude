@@ -39,6 +39,25 @@ independiente del propietario del repositorio.
 | L2FileEdit | Fork de L2jBrasil/L2FileEdit | master |
 | compileFilles | Fork de L2JPremium-stack/compileFilles | main |
 | L2crypt | Independiente; origen histórico acmi/L2crypt. | main |
+| [L2J_Mobius](https://github.com/expcero/L2J_Mobius) | Copia independiente del repositorio Mobius de GitLab; conserva el historial descargado. | master |
+| [l2jvarios](https://github.com/expcero/l2jvarios) | Copia independiente que contiene L2JLisvus Chronicle 4: Scions of Destiny. | main |
+
+Otros repositorios de `expcero` revisados el 2026-09-10:
+
+| Repositorio | Utilidad posible | Estado |
+| --- | --- | --- |
+| [L2Interlude](https://github.com/expcero/L2Interlude) | Base Interlude Java 11/MariaDB con launcher, actualizador y panel web. | Referencia útil para comparar arquitectura; no mezclar código sin revisar licencias y diferencias. |
+| [dev_master](https://github.com/expcero/dev_master) | Otra base NEXORA Interlude Java 11/MariaDB. | Referencia secundaria; repositorio muy grande, no candidato para reemplazar el servidor actual. |
+| [L2JServer_C6_Interlude](https://github.com/expcero/L2JServer_C6_Interlude) | Servidor Interlude basado en archivos L2J Mobius, con eventos y mods. | Referencia de features; no es compatible automáticamente con `net.sf.l2j` ni con nuestro HWID. |
+| [L2HwidWeb](https://github.com/expcero/L2HwidWeb) | Panel web de administración y funciones relacionadas con servidor/HWID. | Útil para una etapa web posterior; no envía el payload `BHWD` del cliente. |
+| [L2Launcher](https://github.com/expcero/L2Launcher) | Launcher Windows, manifest, reparación y descarga de parches; inicia `system/l2.exe`. | Útil después de resolver el cliente; no sustituye `dsetup.dll`. |
+| [xdat_editor](https://github.com/expcero/xdat_editor) | Edición de `interface.xdat`. | Herramienta de cliente posterior; no afecta el protocolo ni HWID. |
+| [l2ce](https://github.com/expcero/l2ce), [dateditor](https://github.com/expcero/dateditor) | Editores de archivos del cliente. | Evaluar solo si `L2FileEdit` o `L2ClientDat` no cubren el archivo concreto. |
+| [Datapack](https://github.com/expcero/Datapack) | Datos de servidor de otra base L2J. | Referencia selectiva; riesgo alto de incompatibilidad con nuestro core y esquema. |
+
+Los demás repositorios del inventario son de Aion, High Five, Essence, bots,
+votación, donaciones, sitios generales o bases de otras crónicas. No aportan una
+solución directa al bloqueo actual y quedan fuera del grupo prioritario.
 
 ## Nuevas copias en GitHub (2026-09-09)
 
@@ -51,6 +70,11 @@ en C:\proyect. L2ClientDat incluye una definición específica para Interlude.
 
 La evaluación de Mobius en GitLab, su inventario de 37 crónicas y la comparación
 con nuestro servidor están en [ANALISIS_MOBIUS.md](ANALISIS_MOBIUS.md).
+
+Referencias externas registradas:
+[proyectos de MobiusDevelopment en GitLab](https://gitlab.com/users/MobiusDevelopment/projects),
+[L2J_Mobius](https://gitlab.com/MobiusDevelopment/L2J_Mobius) y
+[tutorial de instalación](https://l2jmobius.org/forum/index.php?topic=3231.0).
 
 ## Herramientas adicionales (copias remotas verificadas; integración pendiente)
 
@@ -135,6 +159,7 @@ No son dependencias nuevas del servidor.
 | Fecha | Acción | Resultado |
 | --- | --- | --- |
 | 2026-09-09 | Verificación de tres nuevos forks y evaluación de Mobius en GitLab. | Confirmados Dependencies, L2ClientDat y L2unreal bajo expcero. Inventariadas las 37 crónicas de Mobius; CT_0_Interlude priorizado como referencia. Informe en ANALISIS_MOBIUS.md. |
+| 2026-09-10 | Registro de L2J_Mobius y l2jvarios bajo expcero. | L2J_Mobius: copia independiente de Mobius con master. l2jvarios: copia independiente de L2JLisvus Chronicle 4 con main; utilidad como referencia, no como reemplazo de Interlude. |
 | 2026-09-09 | Auditoría de remotos y titularidad de los seis repositorios. | Todos bajo expcero. Confirmados L2crypt independiente y main predeterminada; esto no verifica la publicación del commit local f95d9ba. Registrados orígenes de los otros forks y tres herramientas candidatas adicionales. |
 | 2026-09-09 | Registro de procedencia tras la desvinculación indicada por el usuario. | Origen de expcero/L2crypt: acmi/L2crypt. JekaKlever/L2crypt fue una referencia consultada. Desvinculación remota pendiente de verificar; atribución y licencia conservadas. |
 | 2026-09-09 | Creación de la rama local main en L2crypt. | Commit `f95d9ba`: auxiliares DecryptL2.java y EncryptL2.java agregados, .class ignorados. Push rechazado (403): Git autenticado como germankay sin permiso de escritura en expcero/L2crypt. Pendientes publicar main y establecerla como rama predeterminada en GitHub; master conservada. |

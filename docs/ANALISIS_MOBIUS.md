@@ -18,6 +18,15 @@ Interlude, además de la estructura y configuración del gestor de cuentas.
 No se compiló ni ejecutó Mobius: esta es una evaluación de pertinencia y una
 comparación parcial de código, no una auditoría completa de las 37 implementaciones.
 
+Referencias de seguimiento proporcionadas por el usuario:
+
+- [Proyectos públicos de MobiusDevelopment en GitLab](https://gitlab.com/users/MobiusDevelopment/projects).
+- [Repositorio L2J_Mobius en GitLab](https://gitlab.com/MobiusDevelopment/L2J_Mobius).
+- [Tutorial de instalación de L2J Mobius](https://l2jmobius.org/forum/index.php?topic=3231.0).
+
+La URL del foro recibida incluía dos veces el mismo enlace; se registró la URL
+normalizada una sola vez.
+
 HEAD observado: `43ac8878f582ea792874eb74df16e2b0b64990e6`, del 2026-08-29.
 Las consultas se hicieron contra master; los resultados describen esa revisión
 observada y pueden cambiar con nuevas publicaciones.
@@ -92,6 +101,39 @@ durante la inspección.
 | [expcero/Dependencies](https://github.com/expcero/Dependencies) | lucasg/Dependencies | Prioridad inmediata para inspeccionar dependencias e importaciones de DLL. No detecta cargas dinámicas por LoadLibrary ni valida BHWD. |
 | [expcero/L2ClientDat](https://github.com/expcero/L2ClientDat) | MobiusDevelopment/L2ClientDat | Contiene dist/data/structure/06_interlude.xml: hay una definición específica de Interlude. Falta probar nuestros archivos, en particular si están modificados. |
 | [expcero/L2unreal](https://github.com/expcero/L2unreal) | acmi/L2unreal | Biblioteca para leer y modificar objetos UnrealScript del cliente; útil para una necesidad posterior de paquetes. |
+
+También se verificaron estas dos copias independientes de `expcero`:
+
+| Repositorio | Contenido | Utilidad |
+| --- | --- | --- |
+| [expcero/L2J_Mobius](https://github.com/expcero/L2J_Mobius) | Copia del repositorio completo de Mobius, con las 37 variantes y Account_Manager. | Referencia separada para CT_0_Interlude; no mezclar directamente con nuestro servidor. Rama principal remota: master. |
+| [expcero/l2jvarios](https://github.com/expcero/l2jvarios) | `L2JLisvus Chronicle 4: Scions of Destiny`, Java 25, MariaDB/MySQL y Apache Ant. | Referencia de Chronicle 4; no es un cliente Interlude ni una solución directa para BHWD. Rama principal remota: main. |
+
+`L2J_Mobius` se revisó mediante el clon local completo en
+`C:\proyect\L2J_Mobius`. `l2jvarios` se inspeccionó desde su árbol público;
+su README interno identifica el origen como `TheDnR/l2j-lisvus`.
+
+## Otros repositorios útiles de expcero
+
+La revisión completa de la cuenta también encontró bases Interlude y herramientas
+complementarias que pueden servir como referencia:
+
+- [L2Interlude](https://github.com/expcero/L2Interlude) y
+  [dev_master](https://github.com/expcero/dev_master): bases NEXORA Interlude
+  Java 11/MariaDB; comparar arquitectura y configuraciones, sin reemplazar el
+  core actual automáticamente.
+- [L2JServer_C6_Interlude](https://github.com/expcero/L2JServer_C6_Interlude):
+  servidor Interlude basado en Mobius, útil para comparar eventos y features.
+- [L2HwidWeb](https://github.com/expcero/L2HwidWeb): panel web, no la DLL ni el
+  payload HWID del cliente.
+- [L2Launcher](https://github.com/expcero/L2Launcher): launcher, manifest,
+  reparación y parches; útil después de tener un cliente funcional.
+- [xdat_editor](https://github.com/expcero/xdat_editor), [l2ce](https://github.com/expcero/l2ce)
+  y [dateditor](https://github.com/expcero/dateditor): editores de archivos del
+  cliente para necesidades específicas.
+
+Estos proyectos amplían las opciones de comparación, pero ninguno reemplaza el
+trabajo prioritario de integrar y probar `L2Protection` con el cliente actual.
 
 ## Decisión de trabajo
 
